@@ -73,5 +73,31 @@ public class JuegoPPT {
     public void setElementos(String[] elementos) {
         this.elementos = elementos;
     }
+
+        // Ejecuta una ronda del juego, seleccionando aleatoriamente el elemento de la máquina
+        public void jugar() {
+            elemento_de_la_maquina = elementos[elemento_random.nextInt(elementos.length)];
+            comparar_elementos();
+        }
     
+        /*
+        Compara los elementos seleccionados por el jugador y la máquina para determinar el ganador.
+        Las reglas son:
+        - Fuego gana a Aire
+        - Agua gana a Fuego
+        - Aire gana a Agua
+        - Si ambos eligen el mismo elemento, es un empate
+        */
+    
+        private void comparar_elementos() {
+            if (elemento_del_jugador.equalsIgnoreCase(elemento_de_la_maquina)) {
+                ganador = "Empate";
+            } else if ((elemento_del_jugador.equalsIgnoreCase("Fuego") && elemento_de_la_maquina.equalsIgnoreCase("Aire")) ||
+                    (elemento_del_jugador.equalsIgnoreCase("Agua") && elemento_de_la_maquina.equalsIgnoreCase("Fuego")) ||
+                    (elemento_del_jugador.equalsIgnoreCase("Aire") && elemento_de_la_maquina.equalsIgnoreCase("Agua"))) {
+                ganador = "Ganaste";
+            } else {
+                ganador = "Perdiste";
+            }
+        }
 }
