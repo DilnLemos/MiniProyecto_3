@@ -1,7 +1,7 @@
 package Vista;
 
 import javax.swing.*;
-//import Controlador.Controlador;
+import Controlador.Controlador;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,11 +47,11 @@ public class VistaJuegoPPTGUI extends JFrame {
     
     // Método para establecer el controlador que manejará los eventos de los botones.
 
-    // public void setControlador(Controlador controlador) {
-    //     boton_fuego.addActionListener(controlador);
-    //     boton_agua.addActionListener(controlador);
-    //     boton_aire.addActionListener(controlador);
-    // }
+    public void setControlador(Controlador controlador) {
+        boton_fuego.addActionListener(controlador);
+        boton_agua.addActionListener(controlador);
+         boton_aire.addActionListener(controlador);
+    }
 
     // Método para mostrar el resultado del juego en la etiqueta de resultado.
     public void Mostrar_Ganandor(String eleccion_Jugador, String eleccion_maquina, String ganador) {
