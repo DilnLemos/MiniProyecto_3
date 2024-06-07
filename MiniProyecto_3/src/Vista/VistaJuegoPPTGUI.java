@@ -44,4 +44,24 @@ public class VistaJuegoPPTGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+    
+    // Método para establecer el controlador que manejará los eventos de los botones.
+
+    // public void setControlador(Controlador controlador) {
+    //     boton_fuego.addActionListener(controlador);
+    //     boton_agua.addActionListener(controlador);
+    //     boton_aire.addActionListener(controlador);
+    // }
+
+    // Método para mostrar el resultado del juego en la etiqueta de resultado.
+    public void Mostrar_Ganandor(String eleccion_Jugador, String eleccion_maquina, String ganador) {
+        String resultado =  "<html>---------------------<br>" +
+                            "|     RESULTADO     |<br>" +
+                            "---------------------<br>" +
+                            "Jugador dios del: " + eleccion_Jugador + "<br>" +
+                            "Máquina dios del: " + eleccion_maquina + "<br>" +
+                            "Resultado: " + ganador + "<br>" +
+                            "---------------------</html>";
+        etiqueta_resultado.setText(resultado);
+    }
 }
